@@ -32,7 +32,7 @@ module VimwikiMarkdown
     def rewrite_local_links!
       if vimwiki_markdown_file_exists?
         path = Pathname.new(uri)
-        @uri = "#{path.dirname + path.basename(markdown_extension).to_s.parameterize}.html"
+        @uri = "#{path.dirname + path.basename(markdown_extension).to_s}.html"
       end
     end
 

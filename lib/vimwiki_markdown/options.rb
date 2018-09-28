@@ -87,7 +87,9 @@ module VimwikiMarkdown
     end
 
     def output_fullpath
-      "#{output_dir}#{File.basename(input_file, "#{extension}")}.html"
+      path = Pathname.new(input_file)
+      uri = "#{path.basename("#{extension}").to_s.parameterize}"
+      "#{output_dir}#{uri}.html"
     end
 
     private
